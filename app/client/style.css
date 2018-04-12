@@ -1,0 +1,21 @@
+.landing-background {
+  background: url('https://files.catbox.moe/v62COc.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 200px;
+  padding-top: -50px;
+}
+
+
+.bottom-footer{
+  background-color: #4286f4;
+  margin: 0px;
+  border-radius: 0px;
+  border: none;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+.blue-background{
+  background-color: #4286f4;
+  color: #ffffff;
+}

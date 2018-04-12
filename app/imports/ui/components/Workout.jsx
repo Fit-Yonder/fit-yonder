@@ -1,12 +1,21 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Image, Segment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 class Workout extends React.Component {
+
   render() {
+    const cardstyle = {
+      color: 'black',
+      height: '35em',
+      width: '25em',
+      padding: '1em',
+    };
+
     return (
         <Card centered>
+          <div className='blue-background' style={cardstyle}>
           <Card.Content>
             <Image floated='right' size='mini' src={this.props.workout.image}/>
             <Card.Header>
@@ -19,6 +28,7 @@ class Workout extends React.Component {
               {this.props.workout.description}
             </Card.Description>
           </Card.Content>
+          </div>
         </Card>
     );
   }

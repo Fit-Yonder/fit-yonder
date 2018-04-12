@@ -37,6 +37,7 @@ export default class Signup extends React.Component {
   /** Display the signup form. */
   render() {
     return (
+        <div className='yellow-background' style={ { padding: '4em' } }>
         <Container>
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
@@ -44,7 +45,23 @@ export default class Signup extends React.Component {
                 Register your account
               </Header>
               <Form onSubmit={this.handleSubmit}>
-                <Segment stacked>
+                <Segment inverted color='blue' stacked>
+                  <Form.Input
+                      label="First Name"
+                      icon="lock"
+                      iconPosition="left"
+                      name="firstname"
+                      placeholder="firstname"
+                      type="firstname"
+                  />
+                  <Form.Input
+                      label="Last Name"
+                      icon="lock"
+                      iconPosition="left"
+                      name="lastname"
+                      placeholder="lastname"
+                      type="lastname"
+                  />
                   <Form.Input
                       label="Email"
                       icon="user"
@@ -63,10 +80,13 @@ export default class Signup extends React.Component {
                       type="password"
                       onChange={this.handleChange}
                   />
-                  <Form.Button content="Submit"/>
+                  <Segment textAlign='center' inverted color='blue'>
+                    <Form.Button content="Submit"/>
+                  </Segment>
                 </Segment>
               </Form>
-              <Message>
+              <Segment textAlign='center' inverted color='blue'>
+              <Message compact>
                 Already have an account? Login <Link to="/signin">here</Link>
               </Message>
               {this.state.error === '' ? (
@@ -78,9 +98,11 @@ export default class Signup extends React.Component {
                       content={this.state.error}
                   />
               )}
+              </Segment>
             </Grid.Column>
           </Grid>
         </Container>
+        </div>
     );
   }
 }

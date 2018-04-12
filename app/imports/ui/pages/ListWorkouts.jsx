@@ -4,7 +4,7 @@ import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { Stuffs } from '/imports/api/stuff/stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import Workout from '/imports/ui/components/Workout'
+import Workout from '/imports/ui/components/Workout';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListWorkout extends React.Component {

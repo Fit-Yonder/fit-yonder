@@ -16,7 +16,7 @@ class Workout extends React.Component {
             {this.props.workout.category}
           </Card.Meta>
             <Card.Description>
-              {this.props.description}
+              {this.props.workout.description}
             </Card.Description>
           </Card.Content>
         </Card>

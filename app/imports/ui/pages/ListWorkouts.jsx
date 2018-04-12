@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import Workout from '/imports/ui/components/Workout';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class ListWorkout extends React.Component {
+class ListWorkouts extends React.Component {
 
   workouts = [{
     name: 'Mason Twists', image: 'https://workoutlabs.com/wp-content/uploads/watermarked/Weighted_Twist_F_WorkoutLabs.png', description: 'a type of exercise that is used to work the abdominal muscles by performing a twisting motion on the abdomen. The exercise is believed by those who practice it to build explosiveness in the upper torso, which may help in sports such as tennis, swimming, baseball, track & field, hockey, golf, lacrosse, or boxing.', category: 'abs',

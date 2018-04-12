@@ -6,9 +6,6 @@ class LandingWelcome extends React.Component {
     const landingWelcomeText = {
       paddingTop: '15em'
     };
-    const landingDescriptionText = {
-      color: 'white'
-    };
     return (
         <div className='landing-background'>
 
@@ -30,7 +27,6 @@ class LandingWelcome extends React.Component {
               </Grid.Column>
             </Grid>
           </Container>
-         
 
 
         </div>

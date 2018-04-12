@@ -9,8 +9,8 @@ class Landing extends React.Component {
   render() {
     return (
         <div>
-        <LandingWelcome/>
-        <LandingDescription/>
+          <LandingWelcome/>
+          <LandingDescription/>
           <YellowLine/>
         </div>
     );

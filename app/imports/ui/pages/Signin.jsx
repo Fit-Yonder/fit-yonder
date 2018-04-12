@@ -46,14 +46,16 @@ export default class Signin extends React.Component {
     }
     // Otherwise return the Login form.
     return (
+        <div className='yellow-background'>
         <Container>
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+            <Grid.Row>
             <Grid.Column>
               <Header as="h2" textAlign="center">
                 Login to your account
               </Header>
               <Form onSubmit={this.handleSubmit}>
-                <Segment stacked>
+                <Segment inverted color='blue' stacked>
                   <Form.Input
                       label="Email"
                       icon="user"
@@ -72,13 +74,20 @@ export default class Signin extends React.Component {
                       type="password"
                       onChange={this.handleChange}
                   />
+                    <Segment textAlign='center' inverted color='blue'>
                   <Form.Button content="Submit"/>
-                </Segment>
+                    </Segment>
+                    </Segment>
               </Form>
-              <Message>
-                <Link to="/signup">Click here to Register</Link>
-              </Message>
-              {this.state.error === '' ? (
+            </Grid.Column>
+          </Grid.Row>
+            <Grid.Row>
+            <Grid.Column>
+              <Segment textAlign='center' inverted color='blue'>
+                <Message compact>
+                  <Link to="/signup">Click here to Register</Link>
+                </Message>
+                {this.state.error === '' ? (
                   ''
               ) : (
                   <Message
@@ -87,10 +96,14 @@ export default class Signin extends React.Component {
                       content={this.state.error}
                   />
               )}
+              </Segment>
             </Grid.Column>
+            </Grid.Row>
           </Grid>
+
         </Container>
-    );
+        </div>
+          );
   }
 }
 

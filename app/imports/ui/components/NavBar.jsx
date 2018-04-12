@@ -15,7 +15,7 @@ class NavBar extends React.Component {
     border: 'none',
     paddingLeft: '5em',
     paddingRight: '5em',
-    marginBottom: '0px'};
+    marginBottom: '0px' };
     return (
         <Menu style={menuStyle} attached="top" borderless inverted>
           <Menu.Item as={NavLink} activeClassName="" exact to="/">

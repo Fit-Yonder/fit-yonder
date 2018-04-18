@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Container, Form, Grid, Header, Message, Segment, Button } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 
 /**
@@ -45,7 +45,7 @@ export default class Signup extends React.Component {
                 Register your account
               </Header>
               <Form onSubmit={this.handleSubmit}>
-                <Segment inverted color='003399' stacked>
+                <Segment inverted className="blue-background" stacked>
                   <Form.Input
                       label="First Name"
                       icon="lock"
@@ -80,15 +80,15 @@ export default class Signup extends React.Component {
                       type="password"
                       onChange={this.handleChange}
                   />
-                  <Segment textAlign='center' inverted color='003399'>
+                  <Segment textAlign='center' inverted className="blue-background">
                     <Form.Button content="Submit"/>
                   </Segment>
                 </Segment>
               </Form>
-              <Segment textAlign='center' inverted color='003399'>
-              <Message compact>
-                Already have an account? Login <Link to="/signin">here</Link>
-              </Message>
+              <Segment textAlign='center' inverted className="blue-background">
+              <Button>
+                <Link to="/signin" className="link">Already have an account? Login here</Link>
+              </Button>
               {this.state.error === '' ? (
                   ''
               ) : (

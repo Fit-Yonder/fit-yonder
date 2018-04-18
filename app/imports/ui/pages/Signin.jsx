@@ -56,7 +56,7 @@ export default class Signin extends React.Component {
                   <Header as="h2" textAlign="center">
                     Login to your account
                   </Header>
-                  <Form onSubmit={this.handleSubmit}>s
+                  <Form onSubmit={this.handleSubmit}>
                     <Segment inverted stacked className="blue-background">
                       <Form.Input
                           label="Email"
@@ -86,9 +86,9 @@ export default class Signin extends React.Component {
               <Grid.Row>
                 <Grid.Column>
                   <Segment textAlign='center' inverted className="blue-background">
-                    <button>
-                      <Link to="/signup">Click here to Register</Link>
-                    </button>
+                    <Button>
+                      <Link to="/signup" className="link">Click here to Register</Link>
+                    </Button>
                     {this.state.error === '' ? (
                         ''
                     ) : (

@@ -72,3 +72,10 @@
   background-color: #003399;
   color: black;
 }
+
+.link{
+  color: gray;
+}
+.link:hover {
+  color: black;
+}

@@ -1,10 +1,12 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Grid, Container } from 'semantic-ui-react';
 
+// not currently in use
 class LandingDescription extends React.Component {
   render() {
     const landingDescriptionText = {
-      color: 'white'
+      color: 'white',
     };
     return (
         <div className="blue-background" style={landingDescriptionText}>

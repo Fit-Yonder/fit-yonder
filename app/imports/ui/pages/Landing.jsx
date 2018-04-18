@@ -10,7 +10,7 @@ class Landing extends React.Component {
     return (
         <div>
         <LandingWelcome/>
-        <LandingDescription/>
+        { /* <LandingDescription/> */ }
           <YellowLine/>
         </div>
     );

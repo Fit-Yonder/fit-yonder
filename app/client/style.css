@@ -30,7 +30,7 @@
 }
 
 .bottom-footer {
-  background-color: #4286f4;
+  background-color: #003399;
   margin: 0px;
   border-radius: 0px;
   border: none;
@@ -39,7 +39,7 @@
 }
 
 .blue-background {
-  background-color: #4286f4;
+  background-color: #003399;
   color: black;
 }
 
@@ -49,11 +49,26 @@
 }
 
 .yellow-background {
-  background-color: yellow;
+  background-color: #ffbf00;
   color: black;
 }
 
 .yellow-background-line {
-  background-color:yellow;
+  background-color:#ffbf00;
   height: 0.25em;
+}
+
+.ui.inverted.center.aligned.segment.yellow-background {
+  background-color: #ffbf00;
+  color: black;
+}
+
+.ui.inverted.stacked.segment.blue-background {
+  background-color: #003399;
+  color: black;
+}
+
+.ui.inverted.center.aligned.segment.blue-background {
+  background-color: #003399;
+  color: black;
 }

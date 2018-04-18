@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
-import { Container, Form, Grid, Header, Message, Segment, Divider } from 'semantic-ui-react';
+import { Container, Form, Grid, Header, Message, Segment, Divider, Button } from 'semantic-ui-react';
 
 /**
  * Signin page overrides the form’s submit event and call Meteor’s loginWithPassword().
@@ -37,6 +37,8 @@ export default class Signin extends React.Component {
     });
   }
 
+
+
   /** Render the signin form. */
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } };
@@ -54,8 +56,8 @@ export default class Signin extends React.Component {
                   <Header as="h2" textAlign="center">
                     Login to your account
                   </Header>
-                  <Form onSubmit={this.handleSubmit}>
-                    <Segment inverted color='blue' stacked>
+                  <Form onSubmit={this.handleSubmit}>s
+                    <Segment inverted stacked className="blue-background">
                       <Form.Input
                           label="Email"
                           icon="user"
@@ -74,7 +76,7 @@ export default class Signin extends React.Component {
                           type="password"
                           onChange={this.handleChange}
                       />
-                      <Segment textAlign='center' inverted color='blue'>
+                      <Segment textAlign='center' inverted className="blue-background">
                         <Form.Button content="Submit"/>
                       </Segment>
                     </Segment>
@@ -83,10 +85,10 @@ export default class Signin extends React.Component {
               </Grid.Row>
               <Grid.Row>
                 <Grid.Column>
-                  <Segment textAlign='center' inverted color='blue'>
-                    <Message compact>
+                  <Segment textAlign='center' inverted className="blue-background">
+                    <button>
                       <Link to="/signup">Click here to Register</Link>
-                    </Message>
+                    </button>
                     {this.state.error === '' ? (
                         ''
                     ) : (

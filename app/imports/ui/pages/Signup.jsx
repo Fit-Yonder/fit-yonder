@@ -45,7 +45,7 @@ export default class Signup extends React.Component {
                 Register your account
               </Header>
               <Form onSubmit={this.handleSubmit}>
-                <Segment inverted color='blue' stacked>
+                <Segment inverted color='003399' stacked>
                   <Form.Input
                       label="First Name"
                       icon="lock"
@@ -80,12 +80,12 @@ export default class Signup extends React.Component {
                       type="password"
                       onChange={this.handleChange}
                   />
-                  <Segment textAlign='center' inverted color='blue'>
+                  <Segment textAlign='center' inverted color='003399'>
                     <Form.Button content="Submit"/>
                   </Segment>
                 </Segment>
               </Form>
-              <Segment textAlign='center' inverted color='blue'>
+              <Segment textAlign='center' inverted color='003399'>
               <Message compact>
                 Already have an account? Login <Link to="/signin">here</Link>
               </Message>

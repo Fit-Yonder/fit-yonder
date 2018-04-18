@@ -73,9 +73,15 @@
   color: black;
 }
 
+/*used on signup and sign in for the button that when clicked links*/
 .link{
   color: gray;
 }
 .link:hover {
   color: black;
+}
+
+/*this will showup under the footer if the page is too short*/
+body {
+  background: #003399 !important;
 }

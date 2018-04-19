@@ -1,6 +1,6 @@
 import React from 'react';
 import { Events, EventSchema } from '/imports/api/event/event';
-import { Grid, Segment, Header } from 'semantic-ui-react';
+import { Container, Grid, Segment, Header } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
@@ -41,23 +41,27 @@ class AddEvent extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
     return (
-        <Grid container centered>
-          <Grid.Column>
-            <Header as="h2" textAlign="center" inverted>Create Event</Header>
-            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={EventSchema} onSubmit={this.submit}>
-              <Segment>
-                <TextField name='eventHolder'/>
-                <TextField name='time'/>
-                <TextField name='location'/>
-                <TextField name='image'/>
-                <LongTextField name='description'/>
-                <SubmitField value='Submit'/>
-                <ErrorsField/>
-                <HiddenField name='owner' value='fakeuser@foo.com'/>
-              </Segment>
-            </AutoForm>
-          </Grid.Column>
-        </Grid>
+
+        <div className='yellow-background' style={ { padding: '4em' } }>
+          <Container>
+            <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+              <Grid.Column>
+                <AutoForm ref={(ref) => { this.formRef = ref; }} schema={EventSchema} onSubmit={this.submit}>
+                  <Segment>
+                    <TextField name='name'/>
+                    <TextField name='image'/>
+                    <LongTextField name='description'/>
+                    <TextField name='category'/>
+                    <SubmitField value='Submit'/>
+                    <ErrorsField/>
+                    <HiddenField name='owner' value='fakeuser@foo.com'/>
+                  </Segment>
+                </AutoForm>
+              </Grid.Column>
+            </Grid>
+          </Container>
+        </div>
+
     );
   }
 }

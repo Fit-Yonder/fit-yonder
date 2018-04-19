@@ -33,9 +33,9 @@ class AddEvent extends React.Component {
 
   /** On submit, insert the data. */
   submit(data) {
-    const { eventHolder, time, location, image, description } = data;
+    const { name, image, description, category } = data;
     const owner = Meteor.user().username;
-    Events.insert({ eventHolder, time, location, image, description, owner }, this.insertCallback);
+    Events.insert({ name, image, description, category, owner }, this.insertCallback);
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */

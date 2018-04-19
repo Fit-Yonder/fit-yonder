@@ -31,7 +31,7 @@ class ListWorkouts extends React.Component {
     return (
         <div className='yellow-background' style={ { padding: '4em' } }>
         <Container>
-          <Header as="h2" textAlign="center"> Welcome to your Newsfeed! </Header>
+          <Header as="h2" textAlign="center">List Workouts</Header>
           <Card.Group>
             {this.workouts.map((workout, index) => <Workout key={index} workout={workout} />)}
           </Card.Group>

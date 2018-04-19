@@ -8,7 +8,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListWorkouts from '../pages/ListWorkouts';
-import ListWorkoutsAdmin from '../pages/ListStuffAdmin';
+import ListWorkoutsAdmin from '../pages/ListWorkoutsAdmin';
 import AddWorkouts from '../pages/AddWorkout';
 import Profile from '../pages/Profile';
 import EditStuff from '../pages/EditStuff';

@@ -10,9 +10,9 @@ function addData(data) {
 
 /** Initialize the collection if empty. */
 if (Workouts.find().count() === 0) {
-  if (Meteor.settings.defaultWorkout) {
+  if (Meteor.settings.defaultWorkouts) {
     console.log('Creating default Workouts.');
-    Meteor.settings.defaultWorkout.map(data => addData(data));
+    Meteor.settings.defaultWorkouts.map(data => addData(data));
   }
 }
 

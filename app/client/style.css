@@ -39,21 +39,25 @@
 }
 
 .blue-background {
-  background-color: #4286f4;
-  color: black;
+  background-color: #003399;
+  color: white;
 }
 
+.green-background {
+  background-color: #1aa62a;
+  color: white;
+}
 .gray-background {
-  background-color: gray;
-  color: black;
+  background-color: #ffbf00;
+  color: white;
 }
 
 .yellow-background {
-  background-color: yellow;
-  color: black;
+  background-color: #ffbf00;
+  color: white;
 }
 
 .yellow-background-line {
-  background-color:yellow;
+  background-color: #ffbf00;
   height: 0.25em;
 }

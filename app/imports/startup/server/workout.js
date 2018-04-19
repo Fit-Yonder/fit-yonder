@@ -10,7 +10,6 @@ function addData(data) {
 
 /** Initialize the collection if empty. */
 if (Workouts.find().count() === 0) {
-  console.log('DEBUG WORKOUTS.');
   if (Meteor.settings.defaultWorkout) {
     console.log('Creating default Workouts.');
     Meteor.settings.defaultWorkout.map(data => addData(data));

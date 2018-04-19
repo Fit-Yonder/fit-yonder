@@ -10,9 +10,10 @@ function addData(data) {
 
 /** Initialize the collection if empty. */
 if (Events.find().count() === 0) {
-  if (Meteor.settings.defaultEvents) {
+  console.log('DEBUG Finding defailt Events')
+  if (Meteor.settings.defaultEvent) {
     console.log('Creating default Events.');
-    Meteor.settings.defaultEvents.map(data => addData(data));
+    Meteor.settings.defaultEvent.map(data => addData(data));
   }
 }
 

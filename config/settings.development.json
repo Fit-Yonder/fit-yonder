@@ -12,6 +12,6 @@
   ],
 
   "defaultEvent": [
-    { "eventHolder": "Fit-yondner", "location": "http://fityonder.meteorapp.com/#/", "time": "Anytime", "image": "https://github.com/Fit-Yonder/Fit-Yonder.github.io/raw/master/images/FitYonderLogo.png", "Description": "Find Workouts and fitness related events near you", "owner": "admin@foo.com" }
+    { "eventHolder": "Fit-yondner", "time": "Anytime", "location": "http://fityonder.meteorapp.com/#/", "image": "https://github.com/Fit-Yonder/Fit-Yonder.github.io/raw/master/images/FitYonderLogo.png", "description": "Find Workouts and fitness related events near you", "owner": "admin@foo.com" }
   ]
 }

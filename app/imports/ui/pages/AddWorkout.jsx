@@ -1,5 +1,5 @@
 import React from 'react';
-import { Events, EventSchema } from '/imports/api/event/event';
+import { Workouts, WorkoutSchema } from '/imports/api/workout/workout';
 import { Container, Grid, Segment, Header } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
@@ -11,7 +11,7 @@ import { Bert } from 'meteor/themeteorchef:bert';
 import { Meteor } from 'meteor/meteor';
 
 /** Renders the Page for adding a document. */
-class AddEvent extends React.Component {
+class AddWorkout extends React.Component {
 
   /** Bind 'this' so that a ref to the Form can be saved in formRef and communicated between render() and submit(). */
   constructor(props) {
@@ -35,7 +35,7 @@ class AddEvent extends React.Component {
   submit(data) {
     const { name, image, description, category } = data;
     const owner = Meteor.user().username;
-    Events.insert({ name, image, description, category, owner }, this.insertCallback);
+    Workouts.insert({ name, image, description, category, owner }, this.insertCallback);
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -46,7 +46,7 @@ class AddEvent extends React.Component {
           <Container>
             <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
               <Grid.Column>
-                <AutoForm ref={(ref) => { this.formRef = ref; }} schema={EventSchema} onSubmit={this.submit}>
+                <AutoForm ref={(ref) => { this.formRef = ref; }} schema={WorkoutSchema} onSubmit={this.submit}>
                   <Segment>
                     <TextField name='name'/>
                     <TextField name='image'/>
@@ -66,4 +66,4 @@ class AddEvent extends React.Component {
   }
 }
 
-export default AddEvent;
+export default AddWorkout;

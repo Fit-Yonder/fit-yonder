@@ -9,8 +9,8 @@ import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListWorkouts from '../pages/ListWorkouts';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
-import AddStuff from '../pages/AddStuff';
 import AddEvent from '../pages/AddEvent';
+import AddWorkouts from '../pages/AddWorkout';
 import Profile from '../pages/Profile';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
@@ -30,7 +30,7 @@ class App extends React.Component {
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
               <ProtectedRoute path="/list" component={ListWorkouts}/>
-              <ProtectedRoute path="/add" component={AddStuff}/>
+              <ProtectedRoute path="/add_workout" component={AddWorkouts}/>
               <ProtectedRoute path="/add_event" component={AddEvent}/>
               <ProtectedRoute path="/profile" component={Profile}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>

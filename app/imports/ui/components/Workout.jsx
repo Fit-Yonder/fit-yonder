@@ -12,7 +12,7 @@ class Workout extends React.Component {
       width: '25em',
       padding: '1em',
     };
-
+    
     return (
         <Card centered>
           <div className='blue-background' style={cardstyle}>

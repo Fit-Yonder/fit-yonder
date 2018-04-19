@@ -7,7 +7,7 @@ class Workout extends React.Component {
 
   render() {
     const cardstyle = {
-      color: 'black',
+      color: 'white',
       height: '35em',
       width: '25em',
       padding: '1em',
@@ -22,8 +22,8 @@ class Workout extends React.Component {
               {this.props.workout.name}
             </Card.Header>
             <Card.Meta>
-            {this.props.workout.category}
-          </Card.Meta>
+              {this.props.workout.category}
+            </Card.Meta>
             <Card.Description>
               {this.props.workout.description}
             </Card.Description>

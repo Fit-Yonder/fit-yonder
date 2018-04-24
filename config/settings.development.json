@@ -19,12 +19,7 @@
     { "email": "admin@foo.com", "password": "changeme", "role": "admin", "image": "http://uploads.shanatan.moe/xlmnqf.png" },
     { "email": "john@foo.com", "password": "changeme" }
   ],
-
-  email: String,
-  password: String,
-  image: String,
-  description: String,
-
+  
   "defaultWorkouts": [
   { "name": "Mason Twists", "image": "https://workoutlabs.com/wp-content/uploads/watermarked/Weighted_Twist_F_WorkoutLabs.png", "description": "a type of exercise that is used to work the abdominal muscles by performing a twisting motion on the abdomen. The exercise is believed by those who practice it to build explosiveness in the upper torso, which may help in sports such as tennis, swimming, baseball, track & field, hockey, golf, lacrosse, or boxing.", "category": "abs", "owner": "admin@foo.com"},
   { "name": "Wall Sits", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/WallsitSideview.png/220px-WallsitSideview.png", "description": "A wall sit is an exercise done to strengthen the quadriceps muscles. It is characterized by the two right angles formed by the body, one at the hips and one at the knees. The person wall sitting places their back against a wall with their feet shoulder width apart and a little ways out from the wall. Then, keeping their back against the wall, they lower their hips until their knees form right angles. This is a very intense work out for the quadriceps muscles. It can be very painful to hold this position for extended periods of time. Wall sits are used as a primary strengthening exercise in many sports requiring strong quadriceps like fencing, ice hockey, sailing (mostly small boat racing), skiing and track and field. This exercise is also used as a disciplinary activity in the armed forces. It takes up little space, and can be administered easily in classroom settings to misbehaving soldiers-in-training.", "category": "legs", "owner": "admin@foo.com" },

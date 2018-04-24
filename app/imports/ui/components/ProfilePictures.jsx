@@ -22,7 +22,7 @@ class ProfilePictures extends React.Component {
               <Grid.Column>
               </Grid.Column>
               <Grid.Column>
-                <Image src={this.props.profiles.image} size='small' rounded/>
+                <Image src={this.props.profiles[0].image} size='small' rounded/>
               </Grid.Column>
               <Grid.Column>
             </Grid.Column>

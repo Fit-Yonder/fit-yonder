@@ -11,8 +11,13 @@ class LandingWelcome extends React.Component {
     const landingWelcomeText = {
       paddingTop: '15em',
     };
-    var whiteText = {
+    const whiteText = {
       color: 'white',
+      fontSize: '150%',
+    };
+    const clearBackground = {
+      color: 'white',
+      fontSize: '300%',
     };
     return (
     <div className='landing-background' style={topPadding}>
@@ -23,15 +28,15 @@ class LandingWelcome extends React.Component {
         </Grid.Column>
         <Grid.Column>
 
-          <Segment textAlign='center' inverted className="blue-background">
-            <h1 style={whiteText}>Welcome to a new way to exercise</h1>
+            <h1 style={clearBackground} className='border-outline'>Welcome to a new way to exercise</h1>
             <br></br>
-            <h4 style={whiteText}>Fit Yonder is an application providing a platform for students and health and fitness
+
+            <img src='https://github.com/Fit-Yonder/Fit-Yonder.github.io/blob/master/images/FitYonderLogo.png?raw=true'/>
+            <h4 style={whiteText} className='border-outline'>Fit Yonder is an application providing a platform for students and health and fitness
               professionals that allows them to post ideas for flexible and personalized fitness routines, things
               such as yoga etc. that can be done in one’s dorm room, or somewhere on campus.</h4>
             <br></br>
             <Button size="huge" color='grey'>Join</Button>
-          </Segment>
         </Grid.Column>
 
         <Grid.Column>

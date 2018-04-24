@@ -24,6 +24,14 @@
 
 }
 
+.border-outline{
+  color: #003399FF;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
 
 .ui.center.aligned.container h1 {
   color: white;
@@ -39,7 +47,12 @@
 }
 
 .blue-background {
-  background-color: #003399;
+  background-color: #003399FF;
+  color: black;
+}
+
+.box-background {
+  background-color: rgba( 0, 100, 0, 0.0 );
   color: black;
 }
 

@@ -19,8 +19,8 @@ if (Workouts.find().count() === 0) {
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Workouts', function publish() {
   if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Workouts.find({ owner: username });
+    // const username = Meteor.users.findOne(this.userId).username;
+    return Workouts.find();
   }
   return this.ready();
 });

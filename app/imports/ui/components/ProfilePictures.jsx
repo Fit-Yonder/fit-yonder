@@ -56,7 +56,7 @@ export default withTracker(() => {
   // Get access to Profiles documents.
   const subscription = Meteor.subscribe('Profiles');
   return {
-    profiles: Profiles.find(Meteor.user().emails[0].address).fetch,
+    profiles: Profiles.find(Meteor.user().emails[0].address).fetch(),
     ready: subscription.ready(),
   };
 })(ProfilePictures);

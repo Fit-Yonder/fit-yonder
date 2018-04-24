@@ -1,6 +1,6 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin", "image": "http://uploads.shanatan.moe/xlmnqf.png" },
+    { "email": "admin@foo.com", "password": "changeme", "role": "admin", "image": "https://my.mixtape.moe/otfuvb.png" },
     { "email": "john@foo.com", "password": "changeme" }
   ],
 

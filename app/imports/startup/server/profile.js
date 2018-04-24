@@ -17,7 +17,7 @@ if (Profiles.find().count() === 0) {
 }
 
 /** This subscription publishes only the documents associated with the logged in user */
-Meteor.publish('Profiless', function publish() {
+Meteor.publish('Profiles', function publish() {
   if (this.userId) {
     // const username = Meteor.users.findOne(this.userId).username;
     return Profiles.find();

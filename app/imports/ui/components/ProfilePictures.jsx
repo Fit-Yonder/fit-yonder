@@ -49,7 +49,6 @@ class ProfilePictures extends React.Component {
 ProfilePictures.propTypes = {
   profiles: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
-  
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */

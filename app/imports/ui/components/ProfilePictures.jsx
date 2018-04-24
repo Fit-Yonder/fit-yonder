@@ -1,7 +1,10 @@
 import React from 'react';
 import { Grid, Container, Button, Image } from 'semantic-ui-react';
+import { Profiles } from '/imports/api/profile/profile';
+import { Meteor } from "meteor/meteor";
+import PropTypes from 'prop-types';
 
-class LandingWelcome extends React.Component {
+class ProfilePictures extends React.Component {
   render() {
     const ProfilePicturesCoverSpace = {
       paddingTop: '10px',
@@ -18,7 +21,7 @@ class LandingWelcome extends React.Component {
               <Grid.Column>
               </Grid.Column>
               <Grid.Column>
-                <Image src="https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png" size='small' rounded/>
+                <Image src={this.props.profiles.image} size='small' rounded/>
               </Grid.Column>
               <Grid.Column>
             </Grid.Column>
@@ -41,4 +44,18 @@ class LandingWelcome extends React.Component {
   }
 }
 
-export default LandingWelcome;
+/** Require an array of Stuff documents in the props. */
+ProfilePicturesAdmin.propTypes = {
+  profiles: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
+};
+
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+export default withTracker(() => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe('Workouts');
+  return {
+    profiles: Profiles.find({username.Meteor.user().email}).fetch(),
+    ready: subscription.ready(),
+  };
+})(ProfilePictures);

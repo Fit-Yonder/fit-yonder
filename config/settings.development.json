@@ -4,6 +4,11 @@
     { "email": "john@foo.com", "password": "changeme" }
   ],
 
+  "defaultProfiles": [
+    { "email": "admin@foo.com", "password": "changeme", "role": "admin", "image": "http://arntd.org/wp-content/uploads/2015/03/obinna-ekwunife-2-400x400.jpg" },
+    { "email": "john@foo.com", "password": "changeme" }
+  ],
+
   "defaultData": [
     { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },

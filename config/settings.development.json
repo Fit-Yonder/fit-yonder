@@ -1,6 +1,6 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
+    { "email": "admin@foo.com", "password": "changeme", "role": "admin", "image": "http://uploads.shanatan.moe/xlmnqf.png" },
     { "email": "john@foo.com", "password": "changeme" }
   ],
 
@@ -14,6 +14,16 @@
   "defaultEvent": [
     { "eventHolder": "Fit-yondner", "time": "Anytime", "location": "http://fityonder.meteorapp.com/#/", "image": "https://github.com/Fit-Yonder/Fit-Yonder.github.io/raw/master/images/FitYonderLogo.png", "description": "Find Workouts and fitness related events near you", "owner": "admin@foo.com" }
   ],
+
+  "defaultAccountsData": [
+    { "email": "admin@foo.com", "password": "changeme", "role": "admin", "image": "http://uploads.shanatan.moe/xlmnqf.png" },
+    { "email": "john@foo.com", "password": "changeme" }
+  ],
+
+  email: String,
+  password: String,
+  image: String,
+  description: String,
 
   "defaultWorkouts": [
   { "name": "Mason Twists", "image": "https://workoutlabs.com/wp-content/uploads/watermarked/Weighted_Twist_F_WorkoutLabs.png", "description": "a type of exercise that is used to work the abdominal muscles by performing a twisting motion on the abdomen. The exercise is believed by those who practice it to build explosiveness in the upper torso, which may help in sports such as tennis, swimming, baseball, track & field, hockey, golf, lacrosse, or boxing.", "category": "abs", "owner": "admin@foo.com"},

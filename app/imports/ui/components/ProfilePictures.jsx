@@ -1,8 +1,9 @@
 import React from 'react';
 import { Grid, Container, Button, Image } from 'semantic-ui-react';
 import { Profiles } from '/imports/api/profile/profile';
-import { Meteor } from "meteor/meteor";
+import { Meteor } from 'meteor/meteor';
 import PropTypes from 'prop-types';
+import { withTracker } from 'meteor/react-meteor-data';
 
 class ProfilePictures extends React.Component {
   render() {
@@ -45,17 +46,17 @@ class ProfilePictures extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-ProfilePicturesAdmin.propTypes = {
+ProfilePictures.propTypes = {
   profiles: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
-  // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Workouts');
+  // Get access to Profiles documents.
+  const subscription = Meteor.subscribe('Profiles');
   return {
-    profiles: Profiles.find({username.Meteor.user().email}).fetch(),
+    profiles: Profiles.find(Meteor.user().emails[0].address).fetch,
     ready: subscription.ready(),
   };
 })(ProfilePictures);

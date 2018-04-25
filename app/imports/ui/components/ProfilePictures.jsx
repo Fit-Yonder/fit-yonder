@@ -22,7 +22,9 @@ class ProfilePictures extends React.Component {
               <Grid.Column>
               </Grid.Column>
               <Grid.Column>
-                <Image src={this.props.profiles.toArray()[0].image} size='small' rounded/>
+                {/*<Image src={this.props.profiles.image} size='small' rounded/>*/}
+                <Image src={Profiles.findOne({ owner: 'admin@foo.com' }).image
+                } size='small' rounded/>
               </Grid.Column>
               <Grid.Column>
             </Grid.Column>
@@ -47,7 +49,7 @@ class ProfilePictures extends React.Component {
 
 /** Require an array of Stuff documents in the props. */
 ProfilePictures.propTypes = {
-  profiles: PropTypes.array.isRequired,
+  profiles: PropTypes.object.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -55,10 +57,12 @@ ProfilePictures.propTypes = {
 export default withTracker(() => {
   // Get access to Profiles documents.
   const subscription = Meteor.subscribe('Profiles');
+  console.log(`  Adding: ${Profiles.find({ owner: Meteor.user().emails[0].address }).fetch()} `);
   return {
     // profiles: Profiles.find({ owner: Meteor.user().emails[0].address }).fetch(),
+     profiles: Profiles.find({ owner: Meteor.user().emails[0].address }).fetch(),
     // profiles: Profiles.findOne((this.userId).username),
-    profiles: Profiles.find({ owner: 'admin@foo.com' }).fetch(),
-    ready: subscription.ready(),
+    // profiles: Profiles.find({ owner: this.Meteor.user().username }).fetch()[0],
+  ready: subscription.ready(),
   };
 })(ProfilePictures);

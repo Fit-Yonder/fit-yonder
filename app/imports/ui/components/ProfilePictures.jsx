@@ -60,7 +60,7 @@ export default withTracker(() => {
   console.log(`  Adding: ${Profiles.find({ owner: Meteor.user().emails[0].address }).fetch()} `);
   return {
     // profiles: Profiles.find({ owner: Meteor.user().emails[0].address }).fetch(),
-     profiles: Profiles.find({ owner: Meteor.user().emails[0].address }).fetch(),
+     profiles: Profiles.findOne({ owner: '${Meteor.user().emails[0].address}' }),
     // profiles: Profiles.findOne((this.userId).username),
     // profiles: Profiles.find({ owner: this.Meteor.user().username }).fetch()[0],
   ready: subscription.ready(),

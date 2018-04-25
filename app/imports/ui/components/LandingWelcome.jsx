@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Grid, Container, Button, Segment } from 'semantic-ui-react';
 
 class LandingWelcome extends React.Component {
@@ -31,12 +32,12 @@ class LandingWelcome extends React.Component {
             <h1 style={clearBackground} className='border-outline'>Welcome to a new way to exercise</h1>
             <br></br>
 
-            <img src='https://github.com/Fit-Yonder/Fit-Yonder.github.io/blob/master/images/FitYonderLogo.png?raw=true' height="200" width="200"/>
+            <img src='/images/FitYonderLogo.png' height="200" width="200"/>
             <h4 style={whiteText} className='border-outline'>Fit Yonder is an application providing a platform for students and health and fitness
               professionals that allows them to post ideas for flexible and personalized fitness routines, things
               such as yoga etc. that can be done in one’s dorm room, or somewhere on campus.</h4>
             <br></br>
-            <Button size="huge" color='grey'>Join</Button>
+            <Button size="huge"><Link to="/signup" className="link">Join</Link></Button>
         </Grid.Column>
 
         <Grid.Column>

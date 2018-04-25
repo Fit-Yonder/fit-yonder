@@ -13,11 +13,11 @@
   "defaultProfiles": [
     {
       "owner": "admin@foo.com",
-      "image": "http://arntd.org/wp-content/uploads/2015/03/obinna-ekwunife-2-400x400.jpg"
+      "image": "/images/boy1.jpg"
     },
     {
       "owner": "john@foo.com",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3mwQwhbvshkibife6ggHHOBXILUL1qAD2hHUFuHhoR9Zj6hTx9A"
+      "image": "/images/girl1.jpg"
     }
   ],
   "defaultData": [

@@ -22,7 +22,7 @@ class ProfilePictures extends React.Component {
               <Grid.Column>
               </Grid.Column>
               <Grid.Column>
-                <Image src={this.props.profiles[0].image} size='small' rounded/>
+                <Image src={this.props.profiles.image} size='small' rounded/>
               </Grid.Column>
               <Grid.Column>
             </Grid.Column>
@@ -56,7 +56,9 @@ export default withTracker(() => {
   // Get access to Profiles documents.
   const subscription = Meteor.subscribe('Profiles');
   return {
-    profiles: Profiles.find(Meteor.user().emails[0].address).fetch(),
+    // profiles: Profiles.find({ owner: Meteor.user().emails[0].address }).fetch(),
+    // profiles: Profiles.findOne((this.userId).username),
+    profiles: Profiles.find({ owner: 'admin@foo.com' }).fetch(),
     ready: subscription.ready(),
   };
 })(ProfilePictures);

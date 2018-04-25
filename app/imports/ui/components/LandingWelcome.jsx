@@ -30,13 +30,13 @@ class LandingWelcome extends React.Component {
         <Grid.Column>
 
             <h1 style={clearBackground} className='border-outline'>Welcome to a new way to exercise</h1>
-            <br></br>
+
 
             <img src='/images/FitYonderLogo.png' height="250" width="250"/>
             <h4 style={whiteText} className='border-outline'>Fit Yonder is an application providing a platform for students and health and fitness
               professionals that allows them to post ideas for flexible and personalized fitness routines, things
               such as yoga etc. that can be done in one’s dorm room, or somewhere on campus.</h4>
-            <br></br>
+
             <Button size="huge"><Link to="/signup" className="link">Join</Link></Button>
         </Grid.Column>
 

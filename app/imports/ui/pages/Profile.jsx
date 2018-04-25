@@ -3,12 +3,12 @@ import { Meteor } from 'meteor/meteor';
 import PropTypes from 'prop-types';
 import { Profiles } from '/imports/api/profile/profile';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Grid, Image } from 'semantic-ui-react';
-import ProfilePictures from '../components/ProfilePictures';
-import LandingDescription from '../components/LandingDescription';
+// import { Grid, Image } from 'semantic-ui-react';
+// import ProfilePictures from '../components/ProfilePictures';
+// import LandingDescription from '../components/LandingDescription';
 import ProfileComponent from '../components/ProfileComponent';
 import YellowLine from '../components/YellowLine';
-import ProfileGroups from '../components/ProfileGroups';
+// import ProfileGroups from '../components/ProfileGroups';
 
 
 /** A simple static component to render some text for the landing page. */

@@ -13,11 +13,21 @@
   "defaultProfiles": [
     {
       "owner": "admin@foo.com",
-      "image": "/images/boy1.jpg"
+      "firstName": "Jasmine",
+      "lastName": "Nakayama",
+      "description": "Hello my name is Jasmine. I am an admin on this website. When I'm not coding, I'm running around my house, chasing my nephews, and reading my programming reference books. I am looking forward to working out with others on this website.",
+      "workouts": ["Jumping Jacks ", "Mile Run "],
+      "workoutsCount": [5,3],
+      "image": "/images/girl1.jpg"
     },
     {
       "owner": "john@foo.com",
-      "image": "/images/girl1.jpg"
+      "firstName": "John",
+      "lastName": "Ueda",
+      "description": "Hello my name is John. I enjoy reading books in my free time. I am looking forward to meeting others on this website.",
+      "workouts": ["Push Ups ", "Jumping Jacks "],
+      "workoutsCount": [8,10],
+      "image": "/images/boy1.jpg"
     }
   ],
   "defaultData": [

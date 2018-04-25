@@ -1,5 +1,5 @@
 .landing-background {
-  background: url('https://files.catbox.moe/v62COc.jpg') no-repeat center center fixed;
+  background: url('/images/runner-background.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 50em;
   background-position: bottom center;
@@ -97,4 +97,8 @@
 /*this will showup under the footer if the page is too short*/
 body {
   background: #003399 !important;
+}
+
+.white-text{
+  color:white;
 }

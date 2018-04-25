@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Container, Button, Image } from 'semantic-ui-react';
+import { Grid, Container, Segment, Image } from 'semantic-ui-react';
 import { Profiles } from '/imports/api/profile/profile';
 import { Meteor } from 'meteor/meteor';
 import PropTypes from 'prop-types';
@@ -13,70 +13,118 @@ class ProfileComponent extends React.Component {
       paddingTop: '10px',
 
     };
-    const ProfileGraph = {
+    const ProfilePadding = {
       paddingTop: '0em',
+      color: 'white',
 
     };
+
     const ProfileGroupsStyle = {
       paddingTop: '0em',
       color: 'white',
 
     };
     if (this.props.profile.owner === Meteor.user().username) {
-    return (
-        <div>
-          <div className='profile-cover-mockup' style={ProfilePicturesCoverSpace}>
+      return (
+          <div>
+            <div className='profile-cover-mockup' style={ProfilePicturesCoverSpace}>
+
+              {/* profile top */}
+              <Grid centered columns={8} className="">
+                <Grid.Row>
+
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                    {/* <Image src={this.props.profiles.image} size='small' rounded/> */}
+                    <Image src={this.props.profile.image} size='small' rounded/>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                    {/* <Image src={this.props.profiles.image} size='small' rounded/> */}
+                    <h1 className="white-text">{this.props.profile.firstName} {this.props.profile.lastName}</h1>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
 
 
-            <Grid centered columns={8} className="">
-              <Grid.Row>
+            </div>
+            {/* profile middle */}
+            <div className='yellow-background'>
+              <br></br>
+              <Container>
+                <Segment style={ProfilePadding} textAlign='center' inverted className="blue-background white-text">
+                  <h2 className="white-text">Bio</h2>
+                  <p className="white-text">{this.props.profile.description}</p>
+                </Segment>
+              </Container>
+              <br></br>
+              <Container>
+                <Segment style={ProfilePadding} textAlign='center' inverted className="blue-background white-text">
+                  <h2 className="white-text">Completed Workouts</h2>
+                  <p className="white-text">{this.props.profile.workouts}</p>
+                  {/* {var i; */}
+                    {/* var text; */}
+                    {/* text += "Workouts completed:" */}
+                    {/* for(i =0; i < this.props.profile.workouts.length; i++){ */}
+                    {/* text += this.props.profile.workouts[i]; */}
+                    {/* text += ":"; */}
+                    {/* text += this.props.profile.workoutsCount[i]; */}
+                  {/* } */}
+                    {/* return text;} */}
+                </Segment>
+              </Container>
+              <br></br>
+              <Container>
+                <Image src={'http://resources.renishaw.com/download.aspx?lang=en&data=75769&btn=1'}/>
+              </Container>
+              <br></br>
+            </div>
+            {/* groups */}
+            <div className='blue-background' style={ProfileGroupsStyle}>
 
-                <Grid.Column>
-                </Grid.Column>
-                <Grid.Column>
-                  {/* <Image src={this.props.profiles.image} size='small' rounded/> */}
-                  <Image src={this.props.profile.image} size='small' rounded/>
-                </Grid.Column>
-                <Grid.Column>
-                </Grid.Column>
-                <Grid.Column>
-                </Grid.Column>
-                <Grid.Column>
-                </Grid.Column>
-                <Grid.Column>
-                </Grid.Column>
-                <Grid.Column>
-                </Grid.Column>
-                <Grid.Column>
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
-
-
+              <Container textAlign='center'>
+                <h1>Groups</h1>
+              </Container>
+              <br></br>
+            </div>
           </div>
+      );
+    }
 
-          <div className='blue-background'>
-
-            <Container>
-              <Image src={'http://resources.renishaw.com/download.aspx?lang=en&data=75769&btn=1'}/>
-            </Container>
-
-          </div>
-          <div className='blue-background' style={ProfileGroupsStyle}>
-
-            <Container textAlign='center'>
-              <h1>Groups</h1>
-            </Container>
-
-          </div>
-        </div>
-    );
-}
-
-      return (<div></div>);
+    return (<div>
+      {/* cant find profile */}
+    </div>);
 
   }
-
 
 }
 

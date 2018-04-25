@@ -7,6 +7,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter } from 'react-router-dom';
 
 class ProfileComponent extends React.Component {
+
   render() {
     const ProfilePicturesCoverSpace = {
       paddingTop: '10px',
@@ -20,8 +21,8 @@ class ProfileComponent extends React.Component {
       paddingTop: '0em',
       color: 'white',
 
-
     };
+    if (this.props.profile.owner === Meteor.user().username) {
     return (
         <div>
           <div className='profile-cover-mockup' style={ProfilePicturesCoverSpace}>
@@ -70,7 +71,13 @@ class ProfileComponent extends React.Component {
           </div>
         </div>
     );
+}
+
+      return (<div></div>);
+
   }
+
+
 }
 
 ProfileComponent.propTypes = {

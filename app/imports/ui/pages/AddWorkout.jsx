@@ -1,6 +1,6 @@
 import React from 'react';
 import { Workouts, WorkoutSchema } from '/imports/api/workout/workout';
-import { Container, Grid, Segment, Header } from 'semantic-ui-react';
+import { Container, Grid, Segment, Form, Input, TextArea, Label } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
@@ -46,17 +46,14 @@ class AddWorkout extends React.Component {
           <Container>
             <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
               <Grid.Column>
-                <AutoForm ref={(ref) => { this.formRef = ref; }} schema={WorkoutSchema} onSubmit={this.submit}>
-                  <Segment>
-                    <TextField name='name'/>
-                    <TextField name='image'/>
-                    <LongTextField name='description'/>
-                    <TextField name='category'/>
-                    <SubmitField value='Submit'/>
-                    <ErrorsField/>
-                    <HiddenField name='owner' value='fakeuser@foo.com'/>
-                  </Segment>
-                </AutoForm>
+                <Form>
+                    <Form.Group widths='equal'>
+                      <Form.Field control={Input} label='Workout Name' placeholder='Workout Name' />
+                      <Form.Field control={Input} label='Image URL' placeholder='Image URL' />
+                    </Form.Group>
+                    <Form.Field control={TextArea} label='Decription' placeholder='Describe your workout' />
+                    <Form.Field control={Input} label='Category' placeholder='Category' />
+                </Form>
               </Grid.Column>
             </Grid>
           </Container>

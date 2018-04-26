@@ -100,6 +100,7 @@ class ProfileComponent extends React.Component {
             </div>
             {/* profile middle */}
             <div className='yellow-background'>
+              {/*<div className='all-page-background'>*/}
               <br></br>
               <Container>
                 <Segment style={ProfilePadding} textAlign='center' inverted className="blue-background white-text">
@@ -124,19 +125,18 @@ class ProfileComponent extends React.Component {
                 </Segment>
               </Container>
               <br></br>
+              <Container textAlign='center'>
+                <Segment style={ProfilePadding} textAlign='center' inverted className="blue-background white-text">
+                <h1>Groups</h1>
+                </Segment>
+              </Container>
+              <br></br>
               <Container>
                 <Image src={'http://resources.renishaw.com/download.aspx?lang=en&data=75769&btn=1'}/>
               </Container>
               <br></br>
             </div>
-            {/* groups */}
-            <div className='blue-background' style={ProfileGroupsStyle}>
 
-              <Container textAlign='center'>
-                <h1>Groups</h1>
-              </Container>
-              <br></br>
-            </div>
           </div>
       );
     }

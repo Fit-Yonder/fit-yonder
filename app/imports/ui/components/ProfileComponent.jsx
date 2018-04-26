@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Grid, Container, Segment, Image } from 'semantic-ui-react';
 import { Profiles } from '/imports/api/profile/profile';
@@ -14,9 +15,8 @@ class ProfileComponent extends React.Component {
 
     };
     const ProfilePadding = {
-      paddingTop: '0em',
+      paddingTop: '1em',
       color: 'white',
-
     };
 
     const ProfileGroupsStyle = {
@@ -24,6 +24,27 @@ class ProfileComponent extends React.Component {
       color: 'white',
 
     };
+
+    function workoutList(a, b) {
+      let text = '';
+      let i;
+      const workoutName = a;
+      const workoutNameCount = b;
+      for (i = 0; i < a.length; i++) {
+        text += workoutName[i];
+        text += ': ';
+        text += workoutNameCount[i];
+        text += ' reps';
+        if(i != workoutName.length -1){
+          text += ' \n ';
+        }
+        else{
+          text += '';
+        }
+      }
+      return text;
+    }
+
     if (this.props.profile.owner === Meteor.user().username) {
       return (
           <div>
@@ -82,6 +103,8 @@ class ProfileComponent extends React.Component {
               <br></br>
               <Container>
                 <Segment style={ProfilePadding} textAlign='center' inverted className="blue-background white-text">
+
+
                   <h2 className="white-text">Bio</h2>
                   <p className="white-text">{this.props.profile.description}</p>
                 </Segment>
@@ -89,17 +112,15 @@ class ProfileComponent extends React.Component {
               <br></br>
               <Container>
                 <Segment style={ProfilePadding} textAlign='center' inverted className="blue-background white-text">
+
                   <h2 className="white-text">Completed Workouts</h2>
-                  <p className="white-text">{this.props.profile.workouts}</p>
-                  {/* {var i; */}
-                    {/* var text; */}
-                    {/* text += "Workouts completed:" */}
-                    {/* for(i =0; i < this.props.profile.workouts.length; i++){ */}
-                    {/* text += this.props.profile.workouts[i]; */}
-                    {/* text += ":"; */}
-                    {/* text += this.props.profile.workoutsCount[i]; */}
-                  {/* } */}
-                    {/* return text;} */}
+                  <p className="white-text">
+                    {workoutList(this.props.profile.workouts, this.props.profile.workoutsCount).split('\n').map((item, key) => {
+                      return <span key={key}>{item}<br/></span>
+                    })}
+
+                    {/*{workoutList(this.props.profile.workouts, this.props.profile.workoutsCount)}</p>*/}
+                  </p>
                 </Segment>
               </Container>
               <br></br>

@@ -33,9 +33,9 @@ class AddEvent extends React.Component {
 
   /** On submit, insert the data. */
   submit(data) {
-    const { eventHolder, time, location, image, description } = data;
+    const { name, eventHolder, time, location, image, description } = data;
     const owner = Meteor.user().username;
-    Events.insert({ eventHolder, time, location, image, description, owner }, this.insertCallback);
+    Events.insert({ name, eventHolder, time, location, image, description, owner }, this.insertCallback);
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -48,6 +48,7 @@ class AddEvent extends React.Component {
                 <Grid.Column>
                   <AutoForm ref={(ref) => { this.formRef = ref; }} schema={EventSchema} onSubmit={this.submit}>
                     <Segment>
+                      <TextField name='name'/>
                       <TextField name='eventHolder'/>
                       <TextField name='time'/>
                       <TextField name='location'/>

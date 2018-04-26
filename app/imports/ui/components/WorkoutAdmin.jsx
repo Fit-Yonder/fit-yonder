@@ -36,7 +36,7 @@ class WorkoutAdmin extends React.Component {
         <Card fluid color='blue'>
           <div className='blue-background' style={cardstyle}>
             <Card.Content>
-              <Image floated='right' size='large' src={this.props.workout.image}/>
+              <Image floated='right' height="250" width="250" src={this.props.workout.image}/>
               <Card.Header>
                 {this.props.workout.name}
               </Card.Header>

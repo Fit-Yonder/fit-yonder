@@ -4,10 +4,10 @@ import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { Events } from '/imports/api/event/event';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import Event from '/imports/ui/components/Event';
+import EventAdmin from '/imports/ui/components/EventAdmin';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class ListEvents extends React.Component {
+class ListEventsAdmin extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -21,7 +21,7 @@ class ListEvents extends React.Component {
         <Container>
           <Header as="h2" textAlign="center">Welcome to your workout feed!</Header>
           <Card.Group>
-            {this.props.events.map((event, index) => <Event key={index} event={event} />)}
+            {this.props.events.map((event, index) => <EventAdmin key={index} event={event} />)}
           </Card.Group>
         </Container>
         </div>
@@ -30,7 +30,7 @@ class ListEvents extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-ListEvents.propTypes = {
+ListEventsAdmin.propTypes = {
   events: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -43,4 +43,4 @@ export default withTracker(() => {
     events: Events.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(ListEvents);
+})(ListEventsAdmin);

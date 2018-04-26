@@ -7,6 +7,7 @@ const Events = new Mongo.Collection('Events');
 
 /** Create a schema to constrain the structure of documents associated with this collection. */
 const EventSchema = new SimpleSchema({
+  name: String,
   eventHolder: String,
   time: String,
   location: String,

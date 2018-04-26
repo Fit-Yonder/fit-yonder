@@ -58,6 +58,7 @@
   ],
   "defaultEvent": [
     {
+      "name": "Fit-yonder",
       "eventHolder": "Fit-yondner",
       "time": "Anytime",
       "location": "http://fityonder.meteorapp.com/#/",

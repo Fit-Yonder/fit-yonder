@@ -4,7 +4,7 @@ import { Events } from '../../api/event/event.js';
 
 /** Initialize the database with a default data document. */
 function addData(data) {
-  console.log(`  Adding: ${data.eventHolder} (${data.owner})`);
+  console.log(`  Adding: ${data.name} (${data.owner})`);
   Events.insert(data);
 }
 

@@ -17,7 +17,7 @@ class ListWorkouts extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <div className='yellow-background' style={ { padding: '4em' } }>
+        <div className='all-page-background'>
         <Container>
           <Header as="h2" textAlign="center">Welcome to your workout feed!</Header>
           <Card.Group>

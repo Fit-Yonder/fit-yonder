@@ -42,7 +42,7 @@ class AddEvent extends React.Component {
   render() {
     return (
 
-        <div className='yellow-background' style={ { padding: '4em' } }>
+        <div className='all-page-background' style={ { padding: '4em' } }>
           <Container>
             <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
                 <Grid.Column>

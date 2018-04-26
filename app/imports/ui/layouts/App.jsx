@@ -11,11 +11,9 @@ import ListWorkouts from '../pages/ListWorkouts';
 import ListEvents from '../pages/ListEvents';
 import ListEventsAdmin from '../pages/ListEventsAdmin';
 import ListWorkoutsAdmin from '../pages/ListWorkoutsAdmin';
-import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddEvent from '../pages/AddEvent';
 import AddWorkouts from '../pages/AddWorkout';
 import Profile from '../pages/Profile';
-import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
@@ -37,7 +35,6 @@ class App extends React.Component {
               <ProtectedRoute path="/add_workout" component={AddWorkouts}/>
               <ProtectedRoute path="/add_event" component={AddEvent}/>
               <ProtectedRoute path="/profile" component={Profile}/>
-              <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
               <AdminProtectedRoute path="/admin_workout" component={ListWorkoutsAdmin}/>
               <AdminProtectedRoute path="/admin_event" component={ListEventsAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>

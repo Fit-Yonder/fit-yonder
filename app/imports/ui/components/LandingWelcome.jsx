@@ -21,7 +21,7 @@ class LandingWelcome extends React.Component {
       fontSize: '300%',
     };
     return (
-    <div className='landing-background' style={topPadding}>
+    <div className='all-page-background' style={topPadding}>
 
 
       <Grid columns={3} textAlign='center' style={landingWelcomeText}>

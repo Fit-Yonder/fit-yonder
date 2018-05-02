@@ -19,13 +19,15 @@ class EditProfile extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { firstName, lastName, description, image } = data;
     const owner = Meteor.user().username;
+    const { firstName, lastName, description, image } = data;
+    const workouts = Profiles;
+    const workoutsCount = ;
     // const workouts = Profiles.findOne({ owner: 'admin@foo.com' });
     // const workoutsCount = ;
     // const { firstName, lastName, address, image, description, _id } = data;
     // schema might cause error because its missing workotus workouts count in update call
-    Profiles.update(_id, { $set: { owner, firstName, lastName, description, image } }, (error) => (error ?
+    Profiles.update(_id, { $set: { owner, firstName, lastName, description, workouts, workoutsCount, image } }, (error) => (error ?
         Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
         Bert.alert({ type: 'success', message: 'Update succeeded' })));
   }
@@ -49,6 +51,9 @@ class EditProfile extends React.Component {
                 <TextField name='lastName'/>
                 <LongTextField name='description'/>
                 <TextField name='image'/>
+
+                <TextField name='workouts'/>
+                <TextField name='workoutsCount'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' />

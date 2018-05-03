@@ -20,9 +20,11 @@ class EditProfile extends React.Component {
   /** On successful submit, insert the data. */
   submit(data) {
     const owner = Meteor.user().username;
+    const workouts = this.props.doc.workouts;
+    const workoutsCount = this.props.doc.workoutsCount;
+
+
     const { firstName, lastName, description, image } = data;
-    const workouts = doc.workouts;
-    const workoutsCount = doc.workoutsCount;
     // const workouts = Profiles.findOne({ owner: 'admin@foo.com' });
     // const workoutsCount = ;
     // const { firstName, lastName, address, image, description, _id } = data;
@@ -52,11 +54,13 @@ class EditProfile extends React.Component {
                 <LongTextField name='description'/>
                 <TextField name='image'/>
 
-                {/*<TextField name='workouts'/>*/}
-                {/*<TextField name='workoutsCount'/>*/}
+
+                <HiddenField name='owner' />
+                <HiddenField name='workouts'/>
+                <HiddenField name='workoutsCount'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
-                <HiddenField name='owner' />
+                {/*<HiddenField name='owner' />*/}
                 {/*<HiddenField name='workouts' />*/}
                 {/*<HiddenField name='workoutsCount' />*/}
               </Segment>

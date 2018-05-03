@@ -44,9 +44,9 @@ class EditProfile extends React.Component {
                 <TextField name='lastName'/>
                 <LongTextField name='description'/>
                 <TextField name='image'/>
-                <TextField name='owner'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
+                <HiddenField name='owner'/>
                 <HiddenField name='workouts'/>
                 <HiddenField name='workoutsCount'/>
               </Segment>

@@ -35,10 +35,10 @@ class ProfileComponent extends React.Component {
         text += ': ';
         text += workoutNameCount[i];
         text += ' reps';
-        if(i != workoutName.length -1){
+        if (i != workoutName.length - 1) {
           text += ' \n ';
         }
-        else{
+        else {
           text += '';
         }
       }
@@ -94,6 +94,28 @@ class ProfileComponent extends React.Component {
                   <Grid.Column>
                   </Grid.Column>
                 </Grid.Row>
+
+                <Grid.Row>
+
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                    <a href="#/edit_profile">Edit Profile</a>
+
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                  <Grid.Column>
+                  </Grid.Column>
+                </Grid.Row>
               </Grid>
 
 
@@ -127,7 +149,7 @@ class ProfileComponent extends React.Component {
               <br></br>
               <Container textAlign='center'>
                 <Segment style={ProfilePadding} textAlign='center' inverted className="blue-background white-text">
-                <h1>Groups</h1>
+                  <h1>Groups</h1>
                 </Segment>
               </Container>
               <br></br>

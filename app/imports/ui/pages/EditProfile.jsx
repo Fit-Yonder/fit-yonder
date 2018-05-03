@@ -21,8 +21,8 @@ class EditProfile extends React.Component {
   submit(data) {
     const owner = Meteor.user().username;
     const { firstName, lastName, description, image } = data;
-    const workouts = Profiles;
-    const workoutsCount = ;
+    const workouts = doc.workouts;
+    const workoutsCount = doc.workoutsCount;
     // const workouts = Profiles.findOne({ owner: 'admin@foo.com' });
     // const workoutsCount = ;
     // const { firstName, lastName, address, image, description, _id } = data;
@@ -52,8 +52,8 @@ class EditProfile extends React.Component {
                 <LongTextField name='description'/>
                 <TextField name='image'/>
 
-                <TextField name='workouts'/>
-                <TextField name='workoutsCount'/>
+                {/*<TextField name='workouts'/>*/}
+                {/*<TextField name='workoutsCount'/>*/}
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' />

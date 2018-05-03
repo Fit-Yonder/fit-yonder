@@ -11,8 +11,6 @@ import ErrorsField from 'uniforms-semantic/ErrorsField';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { Tracker } from "meteor/tracker";
-import SimpleSchema from 'simpl-schema';
 
 /** Renders the Page for editing a single document. */
 class EditProfile extends React.Component {
@@ -28,8 +26,6 @@ class EditProfile extends React.Component {
         Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
         Bert.alert({ type: 'success', message: 'Update succeeded' })));
   }
-
-
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -48,14 +44,11 @@ class EditProfile extends React.Component {
                 <TextField name='lastName'/>
                 <LongTextField name='description'/>
                 <TextField name='image'/>
-
-                {/*<TextField name='workouts'/>*/}
-                {/*<TextField name='workoutsCount'/>*/}
+                <TextField name='owner'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
-                <HiddenField name='owner' />
-                <HiddenField name='workouts' />
-                <HiddenField name='workoutsCount' />
+                <HiddenField name='workouts'/>
+                <HiddenField name='workoutsCount'/>
               </Segment>
             </AutoForm>
           </Grid.Column>
@@ -77,85 +70,11 @@ export default withTracker(({ match }) => {
   const documentId = match.params._id;
   // Get access to Profiless documents.
   const subscription = Meteor.subscribe('Profiles');
+
+
   return {
-    doc: Profiles.findOne(documentId),
+    doc: Profiles.findOne({ owner: Meteor.user().username }),
     ready: subscription.ready(),
   };
 })(EditProfile);
 
-
-// import React from 'react';
-// import { Profiles, ProfileSchema } from '/imports/api/profile/profile';
-// import { Container, Grid, Segment, Header } from 'semantic-ui-react';
-// import AutoForm from 'uniforms-semantic/AutoForm';
-// import TextField from 'uniforms-semantic/TextField';
-// import LongTextField from 'uniforms-semantic/LongTextField';
-// import SubmitField from 'uniforms-semantic/SubmitField';
-// import HiddenField from 'uniforms-semantic/HiddenField';
-// import ErrorsField from 'uniforms-semantic/ErrorsField';
-// import { Bert } from 'meteor/themeteorchef:bert';
-// import { Meteor } from 'meteor/meteor';
-// import { Tracker } from "meteor/tracker";
-// import SimpleSchema from 'simpl-schema';
-//
-// /** Renders the Page for adding a document. */
-// class EditProfile extends React.Component {
-//
-//   /** Bind 'this' so that a ref to the Form can be saved in formRef and communicated between render() and submit(). */
-//   constructor(props) {
-//     super(props);
-//     this.submit = this.submit.bind(this);
-//     this.insertCallback = this.insertCallback.bind(this);
-//     this.formRef = null;
-//   }
-//
-//   /** Notify the user of the results of the submit. If successful, clear the form. */
-//   insertCallback(error) {
-//     if (error) {
-//       Bert.alert({ type: 'danger', message: `Edit failed: ${error.message}` });
-//     } else {
-//       Bert.alert({ type: 'success', message: 'Edit succeeded' });
-//       this.formRef.reset();
-//     }
-//   }
-//
-//   /** On submit, insert the data. */
-//   submit(data) {
-//     const { firstName, lastName, description, image } = data;
-//     const owner = Meteor.user().username;
-//     const workouts = Profiles.findOne({ owner: 'admin@foo.com' });
-//     const workoutsCount = ;
-//     Workouts.insert({ owner, firstName, lastName, description, workouts, workoutsCount, image }, this.insertCallback);
-//   }
-//
-//
-//   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
-//   render() {
-//     return (
-//
-//         <div className='all-page-background' style={ { padding: '4em' } }>
-//           <Container>
-//             <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
-//               <Grid.Column>
-//                 <AutoForm ref={(ref) => { this.formRef = ref; }} schema={WorkoutSchema} onSubmit={this.submit}>
-//                   <Segment>
-//                     <TextField name='firstName'/>
-//                     <TextField name='lastName'/>
-//                     <LongTextField name='description'/>
-//                     <TextField name='workouts'/>
-//                     <SubmitField value='Submit'/>
-//                     <TextField name='image'/>
-//                     <ErrorsField/>
-//                     <HiddenField name='owner' value='fakeuser@foo.com'/>
-//                   </Segment>
-//                 </AutoForm>
-//               </Grid.Column>
-//             </Grid>
-//           </Container>
-//         </div>
-//
-//     );
-//   }
-// }
-//
-// export default EditProfile;

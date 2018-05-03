@@ -11,10 +11,20 @@ const ProfileSchema = new SimpleSchema({
   firstName: String,
   lastName: String,
   description: String,
-  workouts: Array,
+
+
+  workouts: {
+    type: Array,
+    optional: true,
+  },
   'workouts.$': String,
-  workoutsCount: Array,
+
+  workoutsCount: {
+    type: Array,
+    optional: true,
+  },
   'workoutsCount.$': Number,
+
   image: String,
 
 }, { tracker: Tracker });

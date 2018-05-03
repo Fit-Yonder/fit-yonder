@@ -3,7 +3,13 @@ import { Card, Button, Image, Segment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
+
+
 class Workout extends React.Component {
+
+  handleClick() {
+
+  }
 
   render() {
     const cardstyle = {
@@ -29,7 +35,7 @@ class Workout extends React.Component {
             </Card.Content>
             <Card.Content extra>
               <div className='blue-background'>
-                <Button fluid circular color='green'> Join workout! </Button>
+                <Button fluid circular color='green' onClick={this.handleClick}> Join workout! </Button>
               </div>
             </Card.Content>
           </div>
@@ -39,7 +45,15 @@ class Workout extends React.Component {
 }
 
 Workout.propTypes = {
+  profile: PropTypes.object.isRequired,
   workout: PropTypes.object.isRequired,
 };
 
-export default withRouter(Workout);
+export default withRouter( () => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe('Profiles');
+  return {
+    profiles: Profiles.find({owner: Meteor.user().username}),
+    ready: subscription.ready(),
+  })
+};

@@ -70,8 +70,6 @@ export default withTracker(({ match }) => {
   const documentId = match.params._id;
   // Get access to Profiless documents.
   const subscription = Meteor.subscribe('Profiles');
-
-
   return {
     doc: Profiles.findOne({ owner: Meteor.user().username }),
     ready: subscription.ready(),

@@ -66,7 +66,7 @@ export default withTracker(({ match }) => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Workouts');
   return {
-    doc: Workouts.findOne(documentId),
+    doc: Workouts.findOne({ owner: Meteor.user().username }),
     ready: subscription.ready(),
   };
 })(EditWorkout);

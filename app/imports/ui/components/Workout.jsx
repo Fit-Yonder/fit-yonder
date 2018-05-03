@@ -33,7 +33,7 @@ class Workout extends React.Component {
               </div>
             </Card.Content>
             <Card.Content extra>
-              <Link to={'/edit/${this.props.workout._id}'}>Edit</Link>
+              <Link to={`/edit/${this.props.workout._id}`}>Edit</Link>
             </Card.Content>
           </div>
         </Card>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Button, Image, Segment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class Workout extends React.Component {
 
@@ -31,6 +31,9 @@ class Workout extends React.Component {
               <div className='blue-background'>
                 <Button fluid circular color='green'> Join workout! </Button>
               </div>
+            </Card.Content>
+            <Card.Content extra>
+              <Link to={`/edit/${this.props.workout._id}`}>Edit</Link>
             </Card.Content>
           </div>
         </Card>

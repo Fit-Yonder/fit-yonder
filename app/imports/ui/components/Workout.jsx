@@ -5,7 +5,7 @@ import { withRouter, Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { Profiles, ProfileSchema } from '/imports/api/profile/profile';
 import { Bert } from 'meteor/themeteorchef:bert';
-import { withRouter } from 'meteor/react-meteor-data';
+import { withRouter, Link } from 'react-router-dom';
 // import { withTracker } from 'meteor/react-meteor-data';
 
 
@@ -58,13 +58,19 @@ class Workout extends React.Component {
 
 Workout.propTypes = {
   workout: PropTypes.object.isRequired,
-  doc: PropTypes.object,
-  model: PropTypes.object,
-  ready: PropTypes.bool.isRequired,
+  // doc: PropTypes.object,
+  // model: PropTypes.object,
+  // ready: PropTypes.bool.isRequired,
 };
 
+
+export default withRouter(Workout);
+
+
+
 //
-// export default withRouter(({ match }) => {
+// /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+// export default withTracker(({ match }) => {
 //   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
 //   const documentId = match.params._id;
 //   // Get access to Profiless documents.
@@ -75,20 +81,4 @@ Workout.propTypes = {
 //     ready: subscription.ready(),
 //   };
 // })(Workout);
-
-
-
-
-/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
-export default withTracker(({ match }) => {
-  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
-  const documentId = match.params._id;
-  // Get access to Profiless documents.
-  const subscription = Meteor.subscribe('Profiles');
-
-  return {
-    doc: Profiles.findOne({ owner: Meteor.user().username }),
-    ready: subscription.ready(),
-  };
-})(Workout);
 

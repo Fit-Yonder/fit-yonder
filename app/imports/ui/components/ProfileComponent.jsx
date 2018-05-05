@@ -80,6 +80,8 @@ class ProfileComponent extends React.Component {
                   <Grid.Column>
                     {/* <Image src={this.props.profiles.image} size='small' rounded/> */}
                     <h1 className="white-text">{this.props.profile.firstName} {this.props.profile.lastName}</h1>
+                    <a href="#/edit_profile">Edit Profile</a>
+
                   </Grid.Column>
                   <Grid.Column>
                   </Grid.Column>
@@ -100,7 +102,7 @@ class ProfileComponent extends React.Component {
                   <Grid.Column>
                   </Grid.Column>
                   <Grid.Column>
-                    <a href="#/edit_profile">Edit Profile</a>
+                    {/*<a href="#/edit_profile">Edit Profile</a>*/}
 
                   </Grid.Column>
                   <Grid.Column>
@@ -147,15 +149,15 @@ class ProfileComponent extends React.Component {
                 </Segment>
               </Container>
               <br></br>
-              <Container textAlign='center'>
-                <Segment style={ProfilePadding} textAlign='center' inverted className="blue-background white-text">
-                  <h1>Groups</h1>
-                </Segment>
-              </Container>
-              <br></br>
-              <Container>
-                <Image src={'http://resources.renishaw.com/download.aspx?lang=en&data=75769&btn=1'}/>
-              </Container>
+              {/*<Container textAlign='center'>*/}
+                {/*<Segment style={ProfilePadding} textAlign='center' inverted className="blue-background white-text">*/}
+                  {/*<h1>Groups</h1>*/}
+                {/*</Segment>*/}
+              {/*</Container>*/}
+              {/*<br></br>*/}
+              {/*<Container>*/}
+                {/*<Image src={'http://resources.renishaw.com/download.aspx?lang=en&data=75769&btn=1'}/>*/}
+              {/*</Container>*/}
               <br></br>
             </div>
 
